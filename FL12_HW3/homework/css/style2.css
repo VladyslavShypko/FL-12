@@ -1,0 +1,200 @@
+.footer_text, .footer-cr {
+  font-family: "Fresca", sans-serif;
+  font-size: 9px; }
+
+.header_heading::before, .section_text::before, .section_banner_heading::before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  background-color: #ff4e33; }
+
+body {
+  padding: 0px;
+  margin: 0px;
+  max-width: 1920px;
+  background: #21232e; }
+
+.header {
+  background: url(..//img/m-h-night.jpg) center center no-repeat;
+  border-radius: 0% 0% 40% 50% / 100% 60% 40% 0%;
+  background-size: 100%; }
+
+.header-wrap {
+  padding: 0 0 140px 125px; }
+
+.landing-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Fresca", sans-serif; }
+  .landing-logo p {
+    text-align: center;
+    margin-left: 10px;
+    font-weight: 600;
+    color: #ffffff; }
+  .landing-logo span {
+    display: block;
+    font-size: 7px; }
+  .landing-logo img {
+    width: 30px;
+    height: 30px; }
+
+.header_heading {
+  font-size: 45px;
+  font-weight: 900;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #ffffff;
+  margin: 20px auto 0px 0px;
+  width: 400px;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 2px;
+  line-height: 50px; }
+  .header_heading::before {
+    width: 200px;
+    height: 32px;
+    top: 67px; }
+
+.header_text {
+  white-space: pre-line;
+  margin: 19px auto 30px 0px;
+  font-family: "Fresca", sans-serif;
+  color: #ffffff;
+  font-size: 10px;
+  line-height: 1.7em;
+  word-spacing: 3px; }
+
+.header_button {
+  background-color: #e3ac00;
+  padding: 8px 25px;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700; }
+
+.login {
+  color: #fff;
+  margin-left: 10%;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 13px; }
+
+.section_text {
+  text-align: center;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Source Sans Pro", sans-serif;
+  position: relative;
+  z-index: 1;
+  width: 300px;
+  margin: 30px auto; }
+  .section_text::before {
+    width: 135px;
+    height: 32px;
+    left: 155px; }
+
+.section_card_wrap {
+  width: 60%;
+  margin: auto; }
+
+.section_card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  background-color: #3b3f50;
+  border-radius: 3px;
+  padding: 10px; }
+  .section_card:last-of-type {
+    margin-bottom: 0; }
+
+.section_card_img {
+  border-radius: 3px;
+  width: 40%; }
+
+.section_card_right_container {
+  text-align: center;
+  color: #fff;
+  width: 60%; }
+
+.section_card_heading {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  margin-top: 30px; }
+
+.section_card_text {
+  text-align: justify;
+  font-size: 10px;
+  line-height: 2em;
+  font-family: "Fresca", sans-serif;
+  padding: 2% 18%;
+  font-weight: 500;
+  color: #EBEDE8; }
+
+.section_link {
+  color: #EBEDE8;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 10px; }
+
+.section_banner {
+  width: 65vw;
+  height: 16vh;
+  margin: auto;
+  background: linear-gradient(to right, #dda305, #97334e);
+  margin-top: 50px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  transform: translateY(8vh); }
+
+.section_banner_text_wrap {
+  align-self: flex-start; }
+
+.section_banner_heading {
+  color: #ffffff;
+  font-weight: 700;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 20px;
+  position: relative;
+  margin-bottom: 0px;
+  z-index: 1;
+  margin-top: 10px; }
+  .section_banner_heading::before {
+    height: 30px;
+    width: 42px;
+    left: 30%;
+    bottom: 2%; }
+
+.section_banner_text {
+  color: #EBEDE8;
+  font-family: "Fresca", sans-serif;
+  font-size: 10px;
+  margin-top: 20px; }
+
+.section_banner_button {
+  background-color: #e3ac00;
+  padding: 8px 25px;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700; }
+
+.footer {
+  background-color: #3b3f50; }
+
+.footer-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #EBEDE8;
+  padding: 12vh 9vw 4vh 9vw; }
+  .footer-wrap p {
+    color: #EBEDE8; }
+
+.footer_logo {
+  margin: 0px; }
