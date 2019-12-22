@@ -247,12 +247,9 @@ body {
     .post-1,
     .post-2,
     .post-3,
-    .post-4 {
-        height: 22vw;
-    }
-
+    .post-4,
     .post-without-img {
-        height: 13vw;
+        height: auto;
     }
 
     .post-article-wrap {
@@ -305,13 +302,6 @@ body {
     .news-title,
     .news-text {
         color: #000;
-    }
-
-    .news-title {
-        font-weight: 300;
-        font-size: 40px;
-        margin-bottom: 10px;
-        line-height: 40px;
     }
 
     .news-img,
