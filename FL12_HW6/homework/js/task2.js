@@ -1,10 +1,12 @@
 // Your code goes here
 
+// Your code goes here
+
 let a = prompt('input a');
 let b = prompt('input b');
 let c = prompt('input c');
 
-if (parseInt(a) && parseInt(b) && parseInt(c) || a === '0' || b === '0' || c === '0') {
+if (+a && +b && +c || a === '0' || b === '0' || c === '0') {
     if (Math.sign(a) !== 1 && Math.sign(b) !== 1 && Math.sign(c) !== 1) {
         alert('A triangle must have 3 sides with a positive definite length ');
 
