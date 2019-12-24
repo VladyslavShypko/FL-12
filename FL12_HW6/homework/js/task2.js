@@ -1,7 +1,5 @@
 // Your code goes here
 
-// Your code goes here
-
 let a = prompt('input a');
 let b = prompt('input b');
 let c = prompt('input c');
