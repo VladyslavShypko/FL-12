@@ -1,0 +1,37 @@
+
+.material-icons {
+    color: #dbac3d;
+}
+span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container {
+    cursor: pointer;
+}
+
+ li {
+    list-style-type: none;
+   }
+
+.folder-open {
+    display: block;
+}
+
+.folder-close {
+    display: none;
+}
+.folder-empty {
+    display: none;
+    margin: 0;
+}
+.margin {
+    margin: 0;
+}
+
+.file {
+    color:darkgrey;
+}
+
