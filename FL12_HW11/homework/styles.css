@@ -8,6 +8,10 @@ span {
     align-items: center;
 }
 
+span:hover {
+    background-color: darkgrey;
+}
+
 .container {
     cursor: pointer;
 }
