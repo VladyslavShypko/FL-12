@@ -1,0 +1,58 @@
+@import "variables.less";
+
+.active {
+    background-color: @color-blue;
+}
+
+.header {
+    color: @color-blue;
+}
+
+.header--yoga, .header--classes {
+    border-bottom: 2px solid @color-blue;
+}
+
+.card__content {
+    border: 1px solid;
+}
+
+.cards {
+    font-weight: 500;
+    .card--kickbox {
+        .card__content {
+            border-color: @card-color-red;
+            &__text {
+                background-color: @card-color-red;
+            }
+        } 
+    }
+    .card--fitness  {
+        .card__content {
+            border-color: @color-blue;
+            &__text {
+                background-color: @color-blue;
+            }
+        } 
+    }
+    .card--zumba {
+        .card__content {
+            border-color: @card-color-orange;
+            &__text {
+                background-color: @card-color-orange;
+            }
+        } 
+    }
+    .card--bootcamp {
+        .card__content {
+            border-color: @card-color-green;
+            &__text {
+                background-color: @card-color-green;
+            }
+        } 
+    }  
+}
+
+.footer__content {
+    background-color: @footer-background-color;
+    font-weight: 500;
+}
