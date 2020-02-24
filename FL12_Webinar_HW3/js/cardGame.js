@@ -118,4 +118,4 @@ class Player {
 
 const player1 = new Player('Vlad');
 const player2 = new Player('Olya');
-// Player.Play(player1, player2);
+ Player.Play(player1, player2);
