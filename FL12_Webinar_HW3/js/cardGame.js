@@ -1,20 +1,41 @@
+const createDeck = () => {
+	let array = [];
+	let suitIndex = 0;
+	const suitArray = ['hearts', 'diamonds', 'clubs', 'spades'];
+	while (suitIndex < suitArray.length) {
+		for (let i = 1; i <= 13; i++) {
+			if (i === 1 || i > 10) {
+				array.push(new Card(suitArray[suitIndex], i, true));
+			} else {
+				array.push(new Card(suitArray[suitIndex], i, false));
+			}
+		}
+		suitIndex++;
+	}
+	return array;
+};
+
 class Card {
 	constructor(suit, rank, isFaceCard) {
 		this.suit = suit;
 		this.rank = rank;
-		this.isFaceCard = isFaceCard;
+		this._isFaceCard = isFaceCard;
 	}
+	get isFaceCard() {
+		return this._isFaceCard;
+	}
+
 	toString() {
 		if (this.rank === 1) {
-			return `Ace of ` + this.suit;
+			return `Ace of ${this.suit}`;
 		} else if (this.rank === 11) {
-			return `Jack of ` + this.suit;
+			return `Jack of ${this.suit}`;
 		} else if (this.rank === 12) {
-			return `Queen of ` + this.suit;
+			return `Queen of ${this.suit}`;
 		} else if (this.rank === 13) {
-			return `King of ` + this.suit;
+			return `King of ${this.suit}`;
 		} else {
-			return `${this.rank} of ` + this.suit;
+			return `${this.rank} of ${this.suit}`;
 		}
 	}
 	static Compare(cardOne, cardTwo) {
@@ -26,25 +47,13 @@ class Card {
 	}
 }
 class Deck {
-	cards = (function () {
-		let array = [];
-		let j = 0;
-		let suitArray = ['hearts', 'diamonds', 'clubs', 'spades'];
-		while (j < suitArray.length) {
-			for (let i = 1; i <= 13; i++) {
-				if (i === 1 || i > 10) {
-					array.push(new Card(suitArray[j], i, true));
-				} else {
-					array.push(new Card(suitArray[j], i, false));
-				}
-			}
-			j++;
-		}
-		return array;
-	}());
-
-	count = this.cards.length;
-
+	constructor() {
+		this.cards = createDeck();
+		this._count = this.cards.length;
+	}
+	get count() {
+		return this._count;
+	}
 	shuffle() {
 		let randomIndex, temp;
 		for (let i = this.cards.length - 1; i > 0; i--) {
@@ -53,47 +62,60 @@ class Deck {
 			this.cards[randomIndex] = this.cards[i];
 			this.cards[i] = temp;
 		}
-		return this.cards;
 	}
 	draw(n) {
-		this.count -= n;
+		this._count -= n;
 		return this.cards.splice(this.cards.length - n, n);
 	}
 }
 
-//let deck = new Deck();
-
 class Player {
 	constructor(name) {
 		this.name = name;
+		this._wins = 0;
 	}
-	wins = 0;
+	get wins() {
+		return this._wins;
+	}
 	deck = new Deck();
 
 	static Play(playerOne, playerTwo) {
-		playerOne.deck = new Deck();
-		playerTwo.deck = new Deck();
-		playerOne.wins = 0;
-		playerTwo.wins = 0;
+		if (playerOne.deck.count === 0) {
+			playerOne.deck = new Deck();
+		}
+		if (playerTwo.deck.count === 0) {
+			playerTwo.deck = new Deck();
+		}
+		playerOne.deck.shuffle();
+		playerTwo.deck.shuffle();
+		playerOne._wins = 0;
+		playerTwo._wins = 0;
+		let playerOneCard, playerTwoCard;
 		while (playerOne.deck.count !== 0 && playerTwo.deck.count !== 0) {
-			let cardCount = playerOne.deck.length - 1;
-			if (Card.Compare(playerOne.deck.shuffle()[playerOne.deck.count-1], playerTwo.deck.shuffle()[playerTwo.deck.count-1]) === 1) {
-//				console.log(playerOne.deck[cardCount], playerTwo.deck[cardCount]);
-				playerOne.wins++;
-			} else if (Card.Compare(playerOne.deck.shuffle()[playerOne.deck.count-1], playerTwo.deck.shuffle()[playerTwo.deck.count-1]) === -1) {
-//				console.log(playerOne.deck[cardCount], playerTwo.deck[cardCount]);
-				playerTwo.wins++;
+			playerOneCard = playerOne.deck.draw(1)[0];
+			playerTwoCard = playerTwo.deck.draw(1)[0];
+			if (Card.Compare(playerOneCard, playerTwoCard) === 1) {
+				playerOne._wins++;
+				console.log(`${playerOne.name} put '${playerOneCard.toString()}' and ${playerTwo.name} put '${playerTwoCard.toString()}'`);
+			} else if (Card.Compare(playerOneCard, playerTwoCard) === -1) {
+				playerTwo._wins++;
+				console.log(`${playerOne.name} put '${playerOneCard.toString()}' and ${playerTwo.name} put '${playerTwoCard.toString()}'`);
+			} else {
+				console.log(`${playerOne.name} put '${playerOneCard.toString()}' and ${playerTwo.name} put '${playerTwoCard.toString()}'`);
 			}
-			playerOne.deck.draw(1);
-			playerTwo.deck.draw(1);
 		}
 		if (playerOne.wins > playerTwo.wins) {
 			console.log(`${playerOne.name} wins ${playerOne.wins} to ${playerTwo.wins}`);
-		} else {
+		} else if (playerOne.wins < playerTwo.wins) {
 			console.log(`${playerTwo.name} wins ${playerTwo.wins} to ${playerOne.wins}`);
+		} else {
+			console.log('Friendship won!!!!');
 		}
 	}
 }
-let playerOne = new Player('Vlad');
-let playerTwo = new Player('Tanya');
-Player.Play(playerOne, playerTwo);
+
+// run example 
+
+const player1 = new Player('Vlad');
+const player2 = new Player('Olya');
+// Player.Play(player1, player2);
