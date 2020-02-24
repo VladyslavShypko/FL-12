@@ -62,7 +62,7 @@ class Employee {
 		this.checkAction(benefits, 'Yahooo!');
 	}
 	getDemoted = (punishment) => {
-		this.checkAction (punishment, 'Damn!');
+		this.checkAction(punishment, 'Damn!');
 	}
 }
 
@@ -91,14 +91,16 @@ class SalesManager extends Manager {
 		this.department = 'sales';
 	}
 }
-
 // task 3
 
 const promoter = (manager) => ({
 	promote(indexEmployees, newSalary) {
-		manager.managedEmployees.find((emp) => emp.id === indexEmployees).getPromoted({salary: newSalary})
+		manager.managedEmployees.find((emp) => emp.id === indexEmployees).getPromoted({
+			salary: newSalary
+		})
 	}
 });
+
 function ManagerPro(manager, action) {
 	if (manager instanceof Manager) {
 		return Object.assign(manager, action(manager));
