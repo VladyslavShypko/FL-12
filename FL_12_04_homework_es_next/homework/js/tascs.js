@@ -79,7 +79,6 @@ const callApi = (url) => {
 		.then(data => {
 			const arr = data.map(user => user.name).sort();
 			console.log(arr);
-			return arr;
 		}).catch((error) => {
 			console.error('Error:', error);
 		});
@@ -95,7 +94,6 @@ async function callApi2(url) {
 		let data = await response.json();
 		let arr = data.map(user => user.name).sort();
 		console.log(arr);
-		return arr;
 	} catch (error) {
 		console.error('Error:', error.message);
 	}
