@@ -95,7 +95,7 @@ async function callApi2(url) {
 		let arr = data.map(user => user.name).sort();
 		console.log(arr);
 	} catch (error) {
-		console.error('Error:', error.message);
+		console.log(error.message);
 	}
 
 }
