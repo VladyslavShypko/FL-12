@@ -1,0 +1,55 @@
+$white-color : #fff;
+
+body {
+	background-color: #C0C0C0;
+}
+.wrapper, .buttons_wrap, .field_game {
+	display: flex;
+	flex-direction: row;
+}
+
+.header, h3 {
+	text-align: center;
+}
+
+.header {
+	color: $white-color;
+	margin: 40px 0;
+}
+.wrapper {
+	justify-content: center;
+}
+.play_block, .rules {
+	background-color: $white-color;
+	margin: 0 50px;
+	padding: 35px;
+	box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+}
+.play_block, .computer, .player {
+	display: flex;
+	flex-direction: column;
+}
+.field_game {
+	width: 400px;
+	height: 280px;
+	padding-top: 50px;
+}
+
+h3 {
+	margin: 0;
+}
+.buttons_wrap {
+	justify-content: space-around;
+}
+button {
+	padding: 8px;
+	background-color: #778899;
+	color: $white-color;
+}
+#reset {
+	background-color: red;
+}
+.field_game {
+	 justify-content: space-around;
+}
+
