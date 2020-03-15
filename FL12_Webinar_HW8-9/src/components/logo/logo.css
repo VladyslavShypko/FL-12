@@ -1,0 +1,13 @@
+.logo-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1vh 7vw;
+    background-color: #fff;
+}
+img {
+    height: 30px;
+}
+h2 {
+    margin: 10px;
+}

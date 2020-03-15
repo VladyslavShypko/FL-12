@@ -1,0 +1,38 @@
+.input-search {
+    width: 65vw;
+    height: 6vh;
+    padding-left: 3vw;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    border: none;
+}
+.input-search::placeholder{
+    color: #A9A9A9;
+}
+.add-course{
+    width: 20vw;
+    background-color: #34cdda;
+    color: #f0f0f4;
+    margin-left: 2vw;
+    box-shadow: 0 0 5px #34cdda;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.input-search, .add-course{
+    border-radius: 8px;
+}
+.add-course > button{
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+}
+.header {
+ display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+    display: flex;
+}
